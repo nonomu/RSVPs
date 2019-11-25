@@ -1,0 +1,198 @@
+
+/* ====================================================
+Recreating the email field from https://webflow.com/cms. Just an experiment - not as cross-browser friendly as the original.
+Changed:
+- animated gradient bar to :after element
+- flexbox for layout
+==================================================== */
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  input {
+    border-style: solid;
+    background: transparent;
+    outline: none;
+  }
+  
+  button {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  
+  body {
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-image: -webkit-radial-gradient(0% 0%, circle, #373b52, #252736 51%, #1d1e26);
+    background-image: radial-gradient(circle at 0% 0%, #373b52, #252736 51%, #1d1e26);
+  }
+  
+#registerEvent{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+ }
+  a.demo {
+    text-align: center;
+    font-size: 40px;
+    font-weight: normal;
+    color: rgba(231, 176, 25, 0.8);
+    /* margin-bottom: 3rem; */
+  }
+  
+  .demo-flex-spacer {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+
+  
+  @-webkit-keyframes gradient {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+  .webflow-style-input {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 25px;
+    padding: 1.4rem 2rem 1.6rem;
+    background: rgba(8, 235, 235, 0.719);
+    height: 8vh;
+    width: 100vw;
+    opacity: 0.8;
+  }
+  .webflow-style-input input {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    color: rgb(1, 2, 3);
+    font-size: 100px;
+  }
+  .webflow-style-input input::-webkit-input-placeholder {
+    color: rgb(52, 84, 201);
+  }
+  
+ 
+  .webflow-style-input button:hover {
+    color: #BFD2FF;
+  }
+  .main-container{
+      display: grid;
+      grid-template-rows: 1fr 23fr 8fr 1fr;
+  }
+  body{
+      height: 100vh;
+      overflow: hidden;
+      background: url(brit.PNG) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: 40% 60%;
+  }
+  .webflow-style-input{
+      margin-right: 10vw;
+      width: 60vw;
+      margin: auto;
+      margin-left: 20px;
+      margin-right: 25px;
+      margin-top: 15px;
+  }
+  ::placeholder{
+      font-size: 40px;
+  }
+  input{
+      font-size: 100px;
+  }
+  .example_b {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #0000007a;
+    padding: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    width: 40vw;
+    }
+    .example_b:hover {
+        text-shadow: 0px 0px 6px rgb(80, 26, 206);
+        -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+        -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+        transition: all 0.4s ease 0s;
+       
+    }
+    .button_cont{
+        width: 400px;
+        margin:auto;
+        margin-top: 40px;
+        font-size: 50px;
+        justify-content: left   ;
+    }
+    .inputim{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+    }
+   input#firstName{
+       font-size: 50px;
+       height: 100px;
+   }
+   input#lastName{
+    font-size: 50px;
+    height: 100px;
+}
+input#childrenNum{
+    font-size: 50px;
+    height: 100px;
+}
+input#adultsNum{
+    font-size: 50px;
+    height: 100px;
+}

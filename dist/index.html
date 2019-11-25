@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Totally Real Site</title>
+    <script src="../handlebars/dist/handlebars.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script type="text/javascript" src="../materialize-css/dist/js/materialize.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../materialize-css/dist/css/materialize.css"
+        media="screen,projection" />
+
+
+
+</head>
+
+<body>
+    <script id="guests-template" type="text/x-handlebars-template">
+
+            {{#each allCityData}}
+            <div  class="City">
+                <div class="fas">
+                    {{#if _id}}
+                    <i class="fas fa-trash"></i>
+                    {{else}}
+                    <i class="fas fa-trash"></i>
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-sync"></i>
+                     {{/if}}
+                </div>
+             <div class="city-info">
+                <div class="city-temperature">{{temperature}}&#176; </div> 
+                <div class="city-name">{{name}}</div>
+              
+            </div> 
+            <div class="weather-info">
+                <div class="weather-img">
+                <img src="http://openweathermap.org/img/wn/{{conditionPic}}@2x.png"> 
+            </div>
+                <div class="city-condition">{{condition}}</div>
+            </div>
+               
+            </div>
+            {{/each}}
+         </script>
+    <div class="main-container">
+        <div class="top-container"></div>
+        <div class="textBody"></div>
+        <div id=registerEvent dir="rtl">
+            <div class=inputim>
+                <div class="webflow-style-input">
+                    <input id="firstName" type="text" placeholder="שם פרטי"size="50px"></input>
+                </div>
+                <div class="webflow-style-input">
+                    <input id="lastName" type="text" placeholder="שם משפחה" size="500px"></input>
+                    
+                </div>
+            </div>
+
+            <div class="inputNumbers">
+
+                    <div class=inputim>
+                            <div class="webflow-style-input">
+                                    <input id="adultsNum" type="number" placeholder="מספר מבוגרים"size="50"></input>
+                                
+                            </div>
+                            <div class="webflow-style-input">
+                                <input id="childrenNum" type="number" placeholder="מספר ילדים"size="50"></input>
+                            </div>
+                        </div>
+            </div>
+            <div class="saveBtn">
+                    <div class="button_cont" align="center"><a class="example_b"  target="_blank" rel="nofollow noopener">אשר</a></div>
+
+            </div>
+        </div class="guests-container">
+      </div>
+    </div>
+    <script src="../jquery/dist/jquery.js"></script>
+    <script src="TempManager.js"></script>
+    <script src="renderer.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
